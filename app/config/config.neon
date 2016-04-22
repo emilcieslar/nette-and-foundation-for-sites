@@ -1,0 +1,32 @@
+#
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+#
+parameters:
+	serverEmail: 'your_server@email.com'
+	serverUrl: 'http://your_server_url.com'
+
+php:
+	date.timezone: Europe/Prague
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: *Module\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+services:
+	- App\Model\UserManager
+	- App\Forms\FormFactory
+	- App\Forms\SignFormFactory
+	- App\Forms\NewPasswordFormFactory
+	- App\Forms\NewPasswordEmailFormFactory
+	- App\Model\Repository\UserRepository
+	- App\Model\Repository\PassLinkRepository
+	router: App\RouterFactory::createRouter
+	authorizator: App\Model\Security\PermissionFactory::create()

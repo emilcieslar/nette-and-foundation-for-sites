@@ -1,0 +1,61 @@
+{include '../../../templates/head.latte'}
+
+<!-- ########################################################################### TOP BAR MENU -->
+{if $user->isLoggedIn()}
+<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+</div>
+
+<div class="row expanded">
+
+    <div n:class="dark-menu, top-bar" id="main-menu">
+
+        <div class="top-bar-left">
+
+            <ul class="dropdown menu medium-horizontal vertical" data-responsive-menu="drilldown medium-dropdown">
+
+                <li><a n:href="Homepage:">Administrace</a></li>
+
+                <li>
+                    <a href="">Menu item</a>
+                    <ul class="menu vertical">
+                        <li><a href="#">Submenu item 1</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="top-bar-right">
+
+            <ul class="menu">
+                <li><a n:href="Login:out">Odhlásit se</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div><!-- row expanded -->
+{/if}
+<!-- ########################################################################### END TOP BAR MENU -->
+
+
+<!-- ########################################################################### FLASH MESSAGES -->
+{if $flashes}
+<div class="row top-padding-50 bottom-padding-20">
+    <div class="medium-6 medium-offset-3 columns text-center">
+
+        <div n:foreach="$flashes as $flash" n:class="callout, flash, $flash->type">{$flash->message}</div>
+
+    </div><!-- large-8 large-2-offset columns -->
+</div><!-- row -->
+{/if}
+
+<!-- ########################################################################### CONTENT -->
+{include content}
+
+
+{include '../../../templates/footer.latte'}

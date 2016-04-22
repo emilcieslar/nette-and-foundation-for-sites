@@ -1,0 +1,52 @@
+{block content}
+
+<div class="row top-padding-50">
+    <div class="medium-6 medium-offset-3 large-4 large-offset-4 columns">
+
+        <div class="clearfix top-20 bottom-20 text-center">
+            <a class="underline" n:href=":Front:Homepage:">&larr; Na domovskou stránku</a>
+        </div><!-- domovska-stranka -->
+
+        <h3 n:block=title>Administrace</h3>
+
+        {form loginForm}
+
+        <!-- Jednoduché vykreslení chyb -->
+        <ul class="errors" n:if="$form->hasErrors()">
+            <li n:foreach="$form->errors as $error">{$error}</li>
+        </ul>
+
+        {/form}
+
+        <form n:name=loginForm class=form>
+            <div class="row">
+                <div class="medium-12 columns">
+                    <label n:name=username>Přihlašovací jméno:
+                        <input n:name=username>
+                    </label>
+                </div>
+                <div class="medium-12 columns">
+                    <label n:name=password>Heslo:
+                        <input n:name=password>
+                    </label>
+                </div>
+                <div class="small-12 columns">
+                    <input n:name=remember id="remember" type="checkbox">
+                    <label for="remember">Zapamatovat přihlášení</label>
+                </div>
+                <div class="medium-12 columns">
+                    <input n:name=send class="button success expanded">
+                </div>
+            </div>
+        </form>
+
+        <div class="zapomenute-heslo clearfix top-20 text-center">
+            <a class="underline" n:href=":Password:New:GenerateLink">Zapomněli jste heslo? &rarr;</a>
+        </div><!-- zapomenute-heslo -->
+
+    </div><!-- medium-4 medium-offset-4 columns -->
+</div><!-- row -->
+
+
+
+{/block}

@@ -1,0 +1,13 @@
+bower_components
+node_modules
+vendor
+.DS_Store
+app/config/config.local.neon
+temp/*
+!temp/.htaccess
+!temp/web.config
+log/*
+!log/.htaccess
+!log/web.config
+www/js
+www/css

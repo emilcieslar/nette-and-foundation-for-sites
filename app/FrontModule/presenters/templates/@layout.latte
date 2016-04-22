@@ -1,0 +1,31 @@
+{include '../../../templates/head.latte'}
+
+<!-- ########################################################################### FLASH MESSAGES IF ANY -->
+{if $flashes}
+<div class="reveal" id="flashesModal" data-reveal>
+
+    <h4>Notification</h4>
+
+    <p n:foreach="$flashes as $flash" n:class="$flash->type">{$flash->message}</p>
+
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+</div>
+{/if}
+
+<!-- ########################################################################### CONTENT -->
+{include content}
+
+<!-- ########################################################################### FOOTER -->
+{include '../../../templates/footer.latte'}
+
+<!-- ##################################### DISPLAY FLASHES MODAL IF FLASHES ARE AVAILABLE -->
+{block scripts}
+    {if $flashes}
+    <script type="text/javascript" n:syntax="off">
+    $('#flashesModal').foundation('open');
+    </script>
+    {/if}
+{/block}
