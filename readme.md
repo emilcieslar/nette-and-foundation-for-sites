@@ -30,16 +30,17 @@ Project structure
 -----------------
 This project is separated into modules from start, the modules are:
 
-1. Front
+1. **Front**
+
 This is module accessible by everyone, it's basically what a consumer of your site sees
 
-2. Admin
+2. **Admin**
+
 This module is devoted to admins, you can add presenters that administer the site. The module is only accessible by user with role = 'admin'
 
-3. Password
+3. **Password**
 This module takes care of forgotten passwords
 
 License
 -------
 - Nette: New BSD License or GPL 2.0 or 3.0
-- Adminer: Apache License 2.0 or GPL 2
