@@ -10,9 +10,9 @@ This project already contains basic setup so what we need to do is
 
 1. Install dependencies
 
-  1.1. `composer install` installs all the PHP related stuff
-  1.2. `npm install` installs all gulp and babel stuff (for building scss and js [you can use ES6 with babel])
-  1.3. `bower install` installs foundation and angular
+  1. `composer install` installs all the PHP related stuff
+  2. `npm install` installs all gulp and babel stuff (for building scss and js [you can use ES6 with babel])
+  3. `bower install` installs foundation and angular
 
 2. Don't forget to make directories `temp/` and `log/` writable using this command `chmod -R a+rw temp log`
 
@@ -20,9 +20,11 @@ This project already contains basic setup so what we need to do is
 
 4. Fill in your base server email and server url in `app/config/config.neon`. Users will receive emails with `from:` specified with this email.
 
-5. Install database using `app/install/install.sql` script in, for instance, phpMyAdmin or in terminal. This will also insert a first test user with username (=email) you specify in the install.sql script. Make sure it's your email because you're gonna need to generate a password for this user. After you build your database, you can go to `yoursite/admin/` where you'll be redirected to login page where you can head over to generate a new password.
+5. Install database using `app/install/install.sql` script in, for instance, phpMyAdmin or in terminal. This will also insert a first test user with username (=email) you specify in the install.sql script. Make sure it's your email because you're gonna need to generate a password for this user. After you build your database, you can go to `yoursite/admin/` where you'll be redirected to login page where you can head over to generate a new password. Alternatively, if you have access to the server's terminal (on localhost usually), you can run (while in your project folder) `php bin/create-user.php your_email your_password` and this will create a new user for you
 
-6. Run `gulp` and then `gulp watch` if you want to watch scss and scripts folders changes
+6. Run `gulp` to set up the css and javascript
+
+7. Run `gulp watch` if you want to watch scss and scripts folders changes
 
 
 License
