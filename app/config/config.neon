@@ -9,7 +9,6 @@ parameters:
 php:
 	date.timezone: Europe/Prague
 
-
 application:
 	errorPresenter: Err:Error
 	mapping:

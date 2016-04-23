@@ -2,6 +2,11 @@
 
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 
-{include content}
+<div class="row">
+    <div class="large-12 columns">
+        {include content}
+    </div>
+</div>
+
 
 {include '../../../templates/footer.latte'}
