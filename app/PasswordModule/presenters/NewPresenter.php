@@ -9,8 +9,6 @@ use App\Model\Repository\PassLinkRepository;
 
 class NewPresenter extends BasePresenter
 {
-	private $db;
-
 	/** @var NewPasswordFormFactory @inject */
 	public $newPasswordFactory;
 
@@ -20,9 +18,8 @@ class NewPresenter extends BasePresenter
 	/** @var PassLinkRepository **/
 	private $passLinkRepository;
 
-	public function __construct(Nette\Database\Context $database, PassLinkRepository $passLinkRepository)
+	public function __construct(PassLinkRepository $passLinkRepository)
 	{
-		$this->db = $database;
 		$this->passLinkRepository = $passLinkRepository;
 	}
 
