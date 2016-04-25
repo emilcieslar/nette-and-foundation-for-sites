@@ -42,7 +42,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 			}
 
             // If not, redirect to login
-            $this->redirect('Login:default', ['backlink' => $this->storeRequest()]);
+            $this->redirect('Sign:in', ['backlink' => $this->storeRequest()]);
 
         // If user is logged in, check if the user is authorized to access this section (Admin section)
         // In other circumstances, we would pass $resource into isAllowed() method, which contains

@@ -74,7 +74,7 @@ class NewPasswordFormFactory extends Nette\Object
 			$form->getPresenter()->flashMessage('Heslo úspěšně vytvořeno, můžete se přihlásit', 'success');
 
 			// Redirect to admin login
-			$form->getPresenter()->redirect(':Admin:Login:default');
+			$form->getPresenter()->redirect(':Admin:Sign:in');
 
 		// In case any error during getting the user occurs, redirect to homepage
 		} else {

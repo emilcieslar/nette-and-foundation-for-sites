@@ -9,7 +9,7 @@
 
         <h3 n:block=title>Administrace</h3>
 
-        {form loginForm}
+        {form signInForm}
 
         <!-- Jednoduché vykreslení chyb -->
         <ul class="errors" n:if="$form->hasErrors()">
@@ -18,7 +18,7 @@
 
         {/form}
 
-        <form n:name=loginForm class=form>
+        <form n:name=signInForm class=form>
             <div class="row">
                 <div class="medium-12 columns">
                     <label n:name=username>Přihlašovací jméno:
