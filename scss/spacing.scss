@@ -1,0 +1,54 @@
+// ----------------------------------------------------------------------------> CUSTOM MARGINS & PADDINGS
+// Use the following classes in your HTML, for example:
+// If you want to add margin-top with size large (l)
+// <div class="top--l"></div>
+@for $i from 0 through 7 {
+
+    // xxs, xs, s, m, l, xl, xxl
+    $className: '';
+
+    @if $i == 0 {$className: 'zero'}
+    @else if $i == 1 {$className: 'xxs'}
+    @else if $i == 2 {$className: 'xs'}
+    @else if $i == 3 {$className: 's'}
+    @else if $i == 4 {$className: 'm'}
+    @else if $i == 5 {$className: 'l'}
+    @else if $i == 6 {$className: 'xl'}
+    @else if $i == 7 {$className: 'xxl'}
+
+    $size: $i*1.5;
+    $largeSize: $size*10px;
+    $mediumSize: $size*0.8*10px;
+    $smallSize: $size*0.5*10px;
+
+    .top--#{$className} { margin-top: $smallSize !important; }
+    .bottom--#{$className} { margin-bottom: $smallSize !important; }
+    .right--#{$className} { margin-right: $smallSize !important; }
+    .left--#{$className} { margin-left: $smallSize !important; }
+    .top-padding--#{$className} { padding-top: $smallSize !important; }
+    .bottom-padding--#{$className} { padding-bottom: $smallSize !important; }
+    .left-padding--#{$className} { padding-left: $smallSize !important; }
+    .right-padding--#{$className} { padding-right: $smallSize !important; }
+
+    @include breakpoint(medium) {
+        .top--#{$className} { margin-top: $mediumSize !important; }
+        .bottom--#{$className} { margin-bottom: $mediumSize !important; }
+        .right--#{$className} { margin-right: $mediumSize !important; }
+        .left--#{$className} { margin-left: $mediumSize !important; }
+        .top-padding--#{$className} { padding-top: $mediumSize !important; }
+        .bottom-padding--#{$className} { padding-bottom: $mediumSize !important; }
+        .left-padding--#{$className} { padding-left: $mediumSize !important; }
+        .right-padding--#{$className} { padding-right: $mediumSize !important; }
+    }
+
+    @include breakpoint(large) {
+        .top--#{$className} { margin-top: $largeSize  !important; }
+        .bottom--#{$className} { margin-bottom: $largeSize  !important; }
+        .right--#{$className} { margin-right: $largeSize  !important; }
+        .left--#{$className} { margin-left: $largeSize  !important; }
+        .top-padding--#{$className} { padding-top: $largeSize  !important; }
+        .bottom-padding--#{$className} { padding-bottom: $largeSize  !important; }
+        .left-padding--#{$className} { padding-left: $largeSize  !important; }
+        .right-padding--#{$className} { padding-right: $largeSize  !important; }
+    }
+}
