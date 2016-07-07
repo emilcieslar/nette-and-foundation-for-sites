@@ -42,3 +42,10 @@ This module takes care of forgotten passwords
 License
 -------
 - Nette: New BSD License or GPL 2.0 or 3.0
+
+Notes
+-----
+- If you don't setup your database in your config file, it will throw this sort of error:
+```
+Service of type Nette\Database\Context needed by App\Model\Repository\Repository::__construct() not found. Did you register it in configuration file?
+```
